@@ -1,14 +1,9 @@
 pipeline {
     agent any
     stages {
-        stage('Initialize') {
-            steps {
-                echo '$PATH'
-                sh 'echo $PATH'
-            }
-        }
         stage('Build') {
             steps {
+                sh 'echo $PATH'
                 sh 'mvn -version'
                 sh 'mvn clean package'    
             }
